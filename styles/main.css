@@ -1,0 +1,159 @@
+@import "./common.css";
+
+input {
+  animation: fadeInOut 1s ease-out;
+  color: var(--primary-color);
+
+  &[type="text"] {
+    border: 1px solid var(--service-color);
+    font-size: 1.25rem;
+    padding: 10px 24px;
+    border-radius: 10px;
+    display: block;
+
+    &::placeholder {
+      opacity: 0.3;
+      font-size: 1rem;
+      font-weight: 200;
+    }
+  }
+
+  &[type="checkbox"] {
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    accent-color: var(--primary-color);
+  }
+
+  &:focus {
+    outline: 1px solid var(--primary-color);
+  }
+}
+
+#lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 30px;
+
+  &:has(.no-lists) {
+    display: unset;
+  }
+}
+
+.no-lists {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 30px;
+  animation: fadeInOut 1s ease-out;
+}
+
+.list {
+  border: 1px solid var(--service-color);
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  animation: fadeInUp 1s ease-out forwards;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li.task {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 1.25rem;
+      transition: all 0.3s ease;
+      animation: fadeInOut 0.5s ease-out forwards;
+
+      &.done label {
+        text-decoration: line-through;
+        color: gray;
+        border-bottom: 2px solid transparent;
+      }
+
+      label {
+        cursor: text;
+        border-bottom: 2px solid var(--primary-color);
+
+        &:focus {
+          outline: 1px solid var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+button {
+  padding: 10px 32px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  animation: fadeInOut 0.5s ease-out;
+
+  &:focus {
+    outline: 1px solid var(--primary-color);
+  }
+
+  &.add-btn {
+    background-color: var(--cta-color);
+    color: var(--cta-color-hover);
+
+    &:hover {
+      background-color: var(--cta-color-hover);
+      color: var(--light-color);
+    }
+  }
+
+  &.remove-list-btn {
+    background-color: var(--alert-color);
+    color: var(--alert-color-hover);
+
+    &:hover {
+      background-color: var(--alert-color-hover);
+      color: var(--light-color);
+    }
+  }
+
+  &.remove-task-btn {
+    padding: 10px 16px;
+    margin-left: auto;
+    background-color: var(--secondary-color);
+    animation: fadeInOut 0.5s ease-out;
+
+    &:hover {
+      background-color: var(--secondary-color-hover);
+    }
+  }
+}
+
+select {
+  display: block;
+  font-size: 1.25rem;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: 1px solid var(--service-color);
+  color: var(--primary-color);
+  -webkit-appearance: none;
+  font-family: "Josefin Sans", sans-serif;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, var(--service-color), var(--service-color));
+  background-position: calc(100% - 20px) 1em, calc(100% - 15px) 1em, calc(100% - 2em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.1em;
+  background-repeat: no-repeat;
+
+  &:focus {
+    outline: 1px solid var(--primary-color);
+  }
+}

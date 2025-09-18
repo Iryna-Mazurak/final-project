@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2e2659;
+  --cta-color: #bac3ae;
+  --cta-color-hover: #586e54;
+  --secondary-color: #d1dae1;
+  --secondary-color-hover: #ecf0f4;
+  --alert-color: #e1ca93;
+  --alert-color-hover: #9d845d;
+  --light-color: #fff;
+  --service-color: #ccc;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  color: var(--primary-color);
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 100px auto 0;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 100px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  animation: fadeInOut 1s ease-out;
+}
+
+h2 {
+  font-size: 1.75rem;
+
+  &:focus {
+    outline: 1px solid var(--primary-color);
+  }
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
