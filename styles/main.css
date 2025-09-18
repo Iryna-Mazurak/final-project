@@ -94,8 +94,8 @@ input {
 }
 
 button {
-  padding: 10px 32px;
-  border-radius: 5px;
+  padding: 11px 32px;
+  border-radius: 10px;
   cursor: pointer;
   border: none;
   font-weight: 500;
